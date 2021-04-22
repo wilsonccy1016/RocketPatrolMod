@@ -15,7 +15,7 @@ class Menu extends Phaser.Scene {
 
         let menuConfig = {
             fontFamily: 'Cursive',
-            fontSize: '28px',
+            fontSize: '20px',
             backgroundColor: '#ff2f00',
             color: '#ffffff',
             align: 'right',
@@ -26,13 +26,15 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
     }
     this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'SHOOT RONALD', menuConfig).setOrigin(0.5);
-    this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ arrows to move & (F) to shoot burger', menuConfig).setOrigin(0.5);
+    this.add.text(game.config.width/2, game.config.height/2, 'Player 1: Use ←→ arrows to move & (↑) to shoot', menuConfig).setOrigin(0.5);
+    this.add.text(game.config.width/2, game.config.height/2, 'Player 2: Use A/D to move & F to shoot', menuConfig).setOrigin(0.5);
     menuConfig.backgroundColor = '#FFFF00';
     menuConfig.color = '#000';
-    this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Easy or → for Hard', menuConfig).setOrigin(0.5);
+    this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Easy or → for Hard or ↑ for Two-player', menuConfig).setOrigin(0.5);
 
     keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
     keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+    keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
 }
 update() {
     if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
@@ -52,6 +54,15 @@ update() {
       }
       this.sound.play('sfx_select');
       this.scene.start('playScene');    
+    }
+    if (Phaser.Input.Keyboard.JustDown(keyUP)) {
+      game.settings = {
+        spaceshipSpeed: 5,
+        birdieSpeed: 7,
+        gameTimer: 45000    
+      }
+      this.sound.play('sfx_select');
+      this.scene.start('duoPlayScene'); 
     }
   }
 }
