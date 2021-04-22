@@ -38,6 +38,7 @@ update() {
     if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
       game.settings = {
         spaceshipSpeed: 4,
+        birdieSpeed: 6,
         gameTimer: 60000    
       }
       this.sound.play('sfx_select');
@@ -46,6 +47,7 @@ update() {
     if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
       game.settings = {
         spaceshipSpeed: 5,
+        birdieSpeed: 7,
         gameTimer: 45000    
       }
       this.sound.play('sfx_select');
