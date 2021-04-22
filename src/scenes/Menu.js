@@ -4,6 +4,7 @@ class Menu extends Phaser.Scene {
     }
 
     preload() {
+        this.load.image('starfield', './assets/starfield.png');
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
@@ -11,7 +12,7 @@ class Menu extends Phaser.Scene {
 
     create() {
       this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
-      
+
         let menuConfig = {
             fontFamily: 'Cursive',
             fontSize: '28px',
