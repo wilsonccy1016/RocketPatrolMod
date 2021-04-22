@@ -10,6 +10,7 @@ class Play2 extends Phaser.Scene {
         this.load.image('birdie', './assets/birdie.png');
         this.load.image('starfield', './assets/starfield.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.spritesheet('explosion2', './assets/explosion2.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
   
     create() {
@@ -44,7 +45,7 @@ class Play2 extends Phaser.Scene {
 
         this.anims.create({
             key: 'explode2',
-            frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
+            frames: this.anims.generateFrameNumbers('explosion2', { start: 0, end: 9, first: 0}),
             frameRate: 30
         });
   
@@ -156,7 +157,7 @@ class Play2 extends Phaser.Scene {
     }
     shipExplode2(ship) {
         ship.alpha = 0;
-        let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
+        let boom = this.add.sprite(ship.x, ship.y, 'explosion2').setOrigin(0, 0);
         boom.anims.play('explode2');             
         boom.on('animationcomplete', () => {    
           ship.reset();                         
