@@ -26,8 +26,8 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
     }
     this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'SHOOT RONALD', menuConfig).setOrigin(0.5);
-    this.add.text(game.config.width/2, game.config.height/2, 'Player 1: Use ←→ arrows to move & (↑) to shoot', menuConfig).setOrigin(0.5);
-    this.add.text(game.config.width/2, game.config.height/2, 'Player 2: Use A/D to move & F to shoot', menuConfig).setOrigin(0.5);
+    this.add.text(game.config.width/2, game.config.height/2, 'Player 1: Use ←→ arrows to move & (↑) to shoot  Player 2: Use A/D to move & F to shoot', menuConfig).setOrigin(0.5);
+  
     menuConfig.backgroundColor = '#FFFF00';
     menuConfig.color = '#000';
     this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Easy or → for Hard or ↑ for Two-player', menuConfig).setOrigin(0.5);
@@ -62,7 +62,7 @@ update() {
         gameTimer: 45000    
       }
       this.sound.play('sfx_select');
-      this.scene.start('duoPlayScene'); 
+      this.scene.start('play2Scene'); 
     }
   }
 }
