@@ -62,10 +62,10 @@ class Play2 extends Phaser.Scene {
               top: 5,
               bottom: 5,
             },
-            fixedWidth: 150
+            fixedWidth: 100
           }
-          this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, 'Player 1:', this.p1Score, scoreConfig);
-          this.scoreRight = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, 'Player 2:', this.p2Score, scoreConfig);
+          this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
+          this.scoreRight = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p2Score, scoreConfig);
           
           this.gameOver = false;
   
