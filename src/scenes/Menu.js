@@ -26,7 +26,7 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
     }
     this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'SHOOT RONALD', menuConfig).setOrigin(0.5);
-    this.add.text(game.config.width/2, game.config.height/2, 'Player 1: Use ←→ to move & ↑ to shoot  Player 2: Use A/D to move & F to shoot', menuConfig).setOrigin(0.5);
+    this.add.text(game.config.width/2, game.config.height/2, 'Player 1: ←→ move & ↑ shoot  Player 2: A/D move & F shoot', menuConfig).setOrigin(0.5);
   
     menuConfig.backgroundColor = '#FFFF00';
     menuConfig.color = '#000';
